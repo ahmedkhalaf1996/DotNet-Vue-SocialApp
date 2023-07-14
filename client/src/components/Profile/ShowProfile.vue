@@ -73,8 +73,8 @@ props:['UserPosts','UserData','isSameUser'],
       const id = this.UserData?._id
       
       const {user} = await this.GetUserByID(this.$route.params.id)
-
-      if(user && user?.followers.find((id) => id === LogedInUserId)){
+      console.log("u user", user)
+      if(user && user?.followers.find((id) => id == LogedInUserId)){
         this.isUserFollowing = true
       } else {
         this.isUserFollowing = false

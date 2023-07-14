@@ -96,7 +96,7 @@ public async Task<IActionResult> GetPost([FromRoute] string id){
 
 
 [HttpGet]
-[Route("/search")]
+[Route("search")]
 public async Task<IActionResult> SearchForUsersPost([FromQuery] string searchQuery){
     if (searchQuery is null){
         return BadRequest(new {message = "proplem with provided body data."}); 

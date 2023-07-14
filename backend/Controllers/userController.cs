@@ -290,7 +290,7 @@ public async Task<IActionResult> UpdateUser([FromRoute] string id , [FromBody] U
             {
                 var user2 = await _userService.GetUserByID(id);
                 
-                if (user2 is null) return NotFound( new {Message = "User Not Found", Success = false} );
+                if (user2 is null || user2._id is null) return NotFound( new {Message = "User Not Found", Success = false} );
 
                 var userIDToken = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 if (userIDToken == null  ){
@@ -299,7 +299,7 @@ public async Task<IActionResult> UpdateUser([FromRoute] string id , [FromBody] U
 
                 var user1 = await _userService.GetUserByID(userIDToken.ToString());
 
-                if (user1 is null) return NotFound( new {Message = "User Not Found", Success = false} );
+                if (user1 is null || user1._id is null) return NotFound( new {Message = "User Not Found", Success = false} );
 
                 if( user1.following == null) {
                    user1.following = new List<string>{};
@@ -313,12 +313,12 @@ public async Task<IActionResult> UpdateUser([FromRoute] string id , [FromBody] U
                 if (fo.Contains(id)) {
                     fo.Remove(id);
                     user1.following = fo;
-                    fo2.Remove(id);
+                    fo2.Remove(user1._id);
                     user2.followers = fo2;
                 } else {
                     fo.Add(id);
                     user1.following = fo;
-                    fo2.Add(id);
+                    fo2.Add(user1._id);
                     user2.followers = fo2;                   
                 }
 

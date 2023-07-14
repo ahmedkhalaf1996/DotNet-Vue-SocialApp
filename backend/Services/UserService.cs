@@ -38,7 +38,7 @@ public class UserService {
 
         FilterDefinition<Post> filterPost = new BsonDocument
         {
-            { "creator", new BsonDocument("$ne", id) }, 
+            // { "creator", new BsonDocument("$ne", id) }, 
             { "creator", new BsonDocument("$regex", id) }
         };
 

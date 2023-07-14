@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\Desktop\\DotNet-FinalApp\\backend\\backend.csproj": {}
+    "C:\\Users\\hp\\Desktop\\DotNet-Vue\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\Desktop\\DotNet-FinalApp\\backend\\backend.csproj": {
+    "C:\\Users\\hp\\Desktop\\DotNet-Vue\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\Desktop\\DotNet-FinalApp\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\Desktop\\DotNet-Vue\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\hp\\Desktop\\DotNet-FinalApp\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\hp\\Desktop\\DotNet-Vue\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\Desktop\\DotNet-FinalApp\\backend\\obj\\",
+        "outputPath": "C:\\Users\\hp\\Desktop\\DotNet-Vue\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",

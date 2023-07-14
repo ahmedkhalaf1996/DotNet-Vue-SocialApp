@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XvOXb0XL8SW2d7kHrRfUZuF/cDNjHYIFwq3QNIjbSk4plzgTLzDFq9cUStBWemL22JwcaCAFidhFbK1zvc3v2w==",
+  "dgSpecHash": "CFEu+yAMpKMLaGk21ou3CWPVFInqoTTmlQIPcdUH4YkJNseR3HKHXg8QMBmF6XYcmLTBpsBFDSsjf/RNQCgxaw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hp\\Desktop\\DotNet-FinalApp\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\DotNet-Vue\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp\\.nuget\\packages\\aspnetcore.identity.mongodbcore\\3.1.2\\aspnetcore.identity.mongodbcore.3.1.2.nupkg.sha512",
     "C:\\Users\\hp\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
