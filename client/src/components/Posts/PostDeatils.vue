@@ -29,13 +29,14 @@ export default {
       ...mapActions(['getPost']),
     },
     async mounted(){
-      const p = await this.getPost(this.$route.params.id)
-      this.post = p
+      console.log("ssax",this.$route.params.id)
+      const {post} = await this.getPost(this.$route.params.id)
+      this.post = post
 
-      console.log(p)
+      console.log(post)
       const LogedInUser = JSON.parse(localStorage.getItem('profile'));
       const LogedINuserId = LogedInUser?.result?._id;
-      if(p?.creator == LogedINuserId){
+      if(post?.creator == LogedINuserId){
         this.IsSameUser = true
       }
     },

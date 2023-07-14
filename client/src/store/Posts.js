@@ -75,10 +75,10 @@ const Posts = {
           console.log(PostData.id, PostData)
 
             try {
-              const { data } = await api.updatePost(PostData.id, PostData);
-            context.commit('Post',data)
-            console.log(data)
-            return data;
+              const { post } = await api.updatePost(PostData.id, PostData);
+            context.commit('Post',post)
+            console.log(post)
+            return post;
             } catch (error) {
               console.log(error)
             }
