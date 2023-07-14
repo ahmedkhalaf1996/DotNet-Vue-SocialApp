@@ -23,7 +23,7 @@ public class Post {
     public string? selectedFile { get; set; }
     public List<string> likes { get; set; } = new List<string>{};
     public List<string> comments { get; set; } = new List<string>{};
-    public DateTime? createdAt { get; set; } = new DateTime{};
+    public DateTime? createdAt { get; set; } =  DateTime.Now;
 
 }
 

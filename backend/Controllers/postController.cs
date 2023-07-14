@@ -139,9 +139,10 @@ public async Task<IActionResult> GetPostsPageNationAsync([FromQuery] int Page, [
 
 
 [HttpPatch]
-[Route("{id}")]
+[Route("{id}"), Authorize]
 public async Task<IActionResult> UpdatePost([FromRoute] string id, [FromBody] CraeteOrUpdatePostInterface body){
         // var post = new Post{};
+        
         if (body.title == null 
             || body.creator == null 
             || body.message == null 
@@ -150,12 +151,25 @@ public async Task<IActionResult> UpdatePost([FromRoute] string id, [FromBody] Cr
             return BadRequest(new {message = "proplem with provided body data."});
         }
 
+        var userIDToken = User.FindFirstValue(ClaimTypes.NameIdentifier)?.ToString();
+        if (userIDToken is null){
+            return NotFound(new {message = "Not Authorized ."});
+        }
+
+  
         var post = new Post{};
         post = await _postService.GetPostByID(id);
 
         if(post is null){
             return NotFound(new {message = "post With given id is not found."});
         }
+  
+        if (userIDToken != post.creator){
+            return Unauthorized(new {message = "you are not authorized."});
+        }
+
+  
+  
         // add new data to post
         post.title = body.title;
         post.creator = body.creator;

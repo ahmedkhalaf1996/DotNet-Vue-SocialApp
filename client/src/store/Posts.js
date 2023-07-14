@@ -72,16 +72,24 @@ const Posts = {
           }
         },
         async  updatePost(context,PostData ){
-          console.log(PostData.id, PostData)
-
-            try {
-              const { post } = await api.updatePost(PostData.id, PostData);
-            context.commit('Post',post)
-            console.log(post)
-            return post;
-            } catch (error) {
-              console.log(error)
+          // console.log("post",PostData.id, PostData)
+          const ud = JSON.parse(localStorage.getItem('profile'));
+          const pooStData = 
+            {
+              "title": PostData.title,
+              "message": PostData.message,
+              "creator": ud?.result?._id,
+              "selectedFile": PostData.selectedFile
             }
+          
+          // try {
+              const  post  = await api.updatePost(PostData.id, pooStData);
+
+              context.commit('Post',post)
+            return post;
+            // } catch (error) {
+            //   console.log(error.message)
+            // }
         },
         async  LikePostByUser(context, id){
             const user = JSON.parse(localStorage.getItem('profile'));
