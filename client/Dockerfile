@@ -3,6 +3,6 @@ WORKDIR /
 COPY client/package*.json ./
 RUN npm install
 COPY client ./
-EXPOSE 8080
+EXPOSE 80
 RUN ls -l
 CMD ["npm", "run", "serve"]
