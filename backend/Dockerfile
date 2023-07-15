@@ -11,9 +11,9 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["backend.csproj", "./"]
+COPY ["backend/backend.csproj", "./"]
 RUN dotnet restore "backend.csproj"
-COPY . .
+COPY backend .
 WORKDIR "/src/."
 RUN dotnet build "backend.csproj" -c Release -o /app/build
 
