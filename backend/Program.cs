@@ -93,7 +93,7 @@ app.UseCors(builder => builder
     .AllowAnyHeader()
     .AllowAnyMethod()
     .AllowCredentials()
-    .WithOrigins("http://localhost:8081", "http://localhost:8080", "http://localhost:80"));
+    .WithOrigins("http://localhost:80", "http://localhost"));
 
 
 app.UseSwagger();
