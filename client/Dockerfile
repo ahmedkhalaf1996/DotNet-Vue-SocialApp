@@ -15,5 +15,5 @@ RUN npm install
 COPY client .
 RUN npm run build 
 FROM nginx:1.15.8-alpine
-COPY --from=build /usr/src/app/build /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 COPY client/.nginx/nginx.conf /etc/nginx/nginx.conf
